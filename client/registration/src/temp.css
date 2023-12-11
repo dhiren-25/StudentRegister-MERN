@@ -1,0 +1,108 @@
+
+body {
+    background-color: #72a27c; /* Light gray background */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff; /* White container background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+ 
+  h1 {
+    color: #333; /* Dark gray text color */
+  }
+  
+  /* Form styles */
+  form {
+    margin-bottom: 20px;
+  }
+  
+  /* Input styles */
+  input {
+    width: 30%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  
+  /* Submit button styles */
+  button {
+    background-color: #d02721; /* Semantic UI blue color */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+  }
+  
+/* Container styles */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+/* Table header cell styles */
+th {
+  background-color: #0071ce; /* Semantic UI blue color */
+  color: white;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Table row styles */
+tr {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+/* Hover effect on table rows */
+tr:hover {
+  background-color: #34bea7; /* Light blue background on hover */
+  transform: scale(1.02);
+  
+}
+
+/* Table cell styles */
+td {
+  padding: 10px;
+}
+
+/* Responsive styles for small screens */
+@media (max-width: 767px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+  /* Delete button styles */
+  .delete-btn {
+   /* background-color: #db2828;  Semantic UI red color */
+    color: white;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  
