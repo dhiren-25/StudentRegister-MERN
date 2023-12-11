@@ -3,15 +3,16 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(bodyParser.json());
 
-// Connect to MongoDB
-mongoose.connect('mongodb+srv://dhiren25:Dhiren25@cluster0.kf0w7y8.mongodb.net/?retryWrites=true&w=majority')
+// Connect to MongoDB.
+mongoose.connect(process.env.MONGO)
 .then(() => console.log('MongoDB Connected...'))
 .catch((e) => console.log(e));
 
@@ -125,6 +126,7 @@ app.delete('/api/students/:id', async (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
+  console.log(process.env.MONGO);
 });
 
 
