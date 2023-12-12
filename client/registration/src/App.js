@@ -14,7 +14,7 @@ const App = () => {
 
   useEffect(() => {
     const fetchStudents = async () => {
-      const response = await axios.get('http://localhost:5001/api/students');
+      const response = await axios.get('https://studentdata-7fj6.onrender.com/api/students');
       setStudents(response.data);
     };
 
@@ -28,7 +28,7 @@ const App = () => {
       
       if (updateStudentId) {
         // Update student data
-        await axios.put(`http://localhost:5001/api/students/${updateStudentId}`, {
+        await axios.put(`https://studentdata-7fj6.onrender.com/api/students/${updateStudentId}`, {
           firstName: e.target.firstName.value,
           lastName: e.target.lastName.value,
           email: e.target.email.value,
@@ -43,7 +43,7 @@ const App = () => {
         setUpdateStudentId(null);
       } else {
         // Add new student
-        const response = await axios.post('http://localhost:5001/api/addStudent', {
+        const response = await axios.post('https://studentdata-7fj6.onrender.com/api/addStudent', {
           firstName: e.target.firstName.value,
           lastName: e.target.lastName.value,
           email: e.target.email.value,
@@ -56,7 +56,7 @@ const App = () => {
 
         if (response.data.success) {
           // Fetch the updated list of students after adding a new student
-          const updatedStudents = await axios.get('http://localhost:5001/api/students');
+          const updatedStudents = await axios.get('https://studentdata-7fj6.onrender.com/api/students');
           setStudents(updatedStudents.data);
           console.log('Student added successfully');
         } else {
@@ -74,11 +74,15 @@ const App = () => {
 
   const handleDelete = async (index, studentId) => {
     try {
-      await axios.delete(`http://localhost:5001/api/students/${studentId}`);
+      await axios.delete(`https://studentdata-7fj6.onrender.com/api/students/${studentId}`);
       const reversedStudents = [...students].reverse();
       reversedStudents.splice(index, 1);
       setStudents(reversedStudents);
+      // const updatedStudents = [...students];
+      // updatedStudents.splice(index, 1);
+      // setStudents(updatedStudents);
       console.log('Student deleted successfully');
+      
     } catch (error) {
       console.error('Error deleting student:', error);
     }
@@ -87,7 +91,7 @@ const App = () => {
   const handleUpdate = async (studentId) => {
     try {
       // Fetch student details
-      const response = await axios.get(`http://localhost:5001/api/student/${studentId}`);
+      const response = await axios.get(`https://studentdata-7fj6.onrender.com/api/student/${studentId}`);
       const studentDetails = response.data;
       
       
